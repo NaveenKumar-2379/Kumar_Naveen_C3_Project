@@ -47,6 +47,15 @@ class RestaurantTest {
         assertEquals(0, price);
     }
 
+    // Final Passing Test case for TDD
+    @Test
+    public void item_added_to_menu_should_return_Expected_Price() throws itemNotFoundException {
+        addRestaurantDetails();
+        restaurant.addToMenu("Sizzling brownie",319);
+        int price = restaurant.getSelectedItemPrice();
+        assertEquals(707, price);
+    }
+
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
