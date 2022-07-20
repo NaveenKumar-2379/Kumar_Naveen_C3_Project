@@ -37,6 +37,15 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    // Failure test case for TDD.
+    @Test
+    public void item_not_added_to_menu_should_return_zero() throws itemNotFoundException {
+        addRestaurantDetails();
+        restaurant.removeFromMenu("Sweet corn soup");
+        restaurant.removeFromMenu("Vegetable lasagne");
+        int price = restaurant.getSelectedItemPrice();
+        assertEquals(0, price);
+    }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
